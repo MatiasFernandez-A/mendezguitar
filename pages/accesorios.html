@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -32,25 +33,25 @@
     <main class="contenedorMain">
         <section>
             <div class="accesorios">
-                <div class="accesorios__item">
+                <div data-aos="fade-right" class="accesorios__item">
                     <h2 class="accesorios__titulos">Cables</h2>
                     <img class="accesorios__imagenes" src="https://www.fmicassets.com/Damroot/MedJpg/10001/0990515010_merch_frt_002_nr.jpg"
                         alt="Cables" />
                 </div>
-                <div class="accesorios__item">
+                <div  data-aos="fade-left" class="accesorios__item">
                     <h2 class="accesorios__titulos" >Afinador</h2>
                     <img class="accesorios__imagenes" src="https://www.fmicassets.com/Damroot/MedJpg/10001/0239979005_merch_dtl_002_nr.jpg"
                         alt="Afinador" />
                 </div>
-                <div class="accesorios__item">
+                <div data-aos="fade-right" class="accesorios__item">
                     <h2 class="accesorios__titulos" >Colgante</h2>
                     <img class="accesorios__imagenes" src="https://m.media-amazon.com/images/I/61-cEauqDJL._AC_SL1020_.jpg" alt="Colgante" />
                 </div>
-                <div class="accesorios__item">
+                <div data-aos="fade-left" class="accesorios__item">
                     <h2 class="accesorios__titulos" >Puas</h2>
                     <img class="accesorios__imagenes" src="https://i.pinimg.com/564x/b4/98/be/b498be91f0e08d1d29fb7e5dd467c3d3.jpg" alt="Puas" />
                 </div>
-                <div class="accesorios__item">
+                <div data-aos="fade-right" class="accesorios__item">
                     <h2 class="accesorios__titulos" >Apoya Guitarra</h2>
                     <img class="accesorios__imagenes" src="https://www.fmicassets.com/Damroot/MedJpg/10001/0991802000_fen_acc_frt_1_nr.jpg"
                         alt="Apoya Guitarra" />
@@ -85,6 +86,10 @@
             </a>
             </div>
     </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>

@@ -37,8 +37,15 @@ nav {
   justify-content: space-around;
   align-items: center;
 }
+/* ----------------TRANSFORMACION---------------- */
+header nav h1{
+  transition: transform 2s;
+}
+header nav h1:hover{
+  transform: rotateY(300deg);
+}
 header h1 a {
-  color: rgb(238, 238, 238);
+  color: rgb(255, 255, 255);
   font-size: 3rem;
   letter-spacing: 0.25rem;
 }
