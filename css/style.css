@@ -1,0 +1,404 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Teko", sans-serif;
+}
+
+.gridContenedor {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3 1fr);
+}
+.contenedorHeader {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+.contenedorMain {
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+.contenedorFooter {
+  grid-column: 1/2;
+  grid-row: 3/4;
+}
+
+/* HEADER */
+
+nav {
+  background-color: rgb(111, 111, 111);
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+header h1 a {
+  color: rgb(238, 238, 238);
+  font-size: 3rem;
+  letter-spacing: 0.25rem;
+}
+nav ul {
+  display: flex;
+}
+nav ul li {
+  border-right: solid 0.1rem black;
+}
+nav ul li:last-child {
+  border-right: none;
+}
+nav ul li a {
+  color: rgb(0, 0, 0);
+  padding: 0.8rem 1rem;
+  text-transform: uppercase;
+  font-family: "Teko", sans-serif;
+}
+nav ul li a:hover {
+  background-color: rgb(237, 237, 237);
+  transition: all 0.5s ease;
+}
+.drawer {
+  color: white;
+  float: left;
+  cursor: pointer;
+  display: none;
+  margin-left: 1rem;
+  border: solid 0.1rem white;
+  padding: 0.2rem;
+  border-radius: 0.1rem;
+}
+#ckbox {
+  display: none;
+}
+
+/* MAIN INDEX */
+.carrusel {
+  display: flex;
+  overflow-x: scroll;
+  margin: auto;
+}
+.fotoGuitarra {
+  width: 80rem;
+  height: 35rem;
+  object-fit: cover;
+  margin: 0.1rem;
+}
+.tituloParrafoPosicion {
+  width: 80%;
+  margin: auto;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.tituloFrase {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 2rem;
+  margin-top: 2rem;
+}
+.contenedorFrase h3 {
+  font-size: 1.4rem;
+}
+.contenedorFrase p {
+  margin-left: 3rem;
+  font-size: 1.1rem;
+}
+/* MAIN PRODUCTOS */
+
+.seccionProductos__titulo {
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+  font-size: 2rem;
+  background-color: rgba(226, 226, 226, 0.809);
+}
+.seccionProductos__listaProductos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.seccionProductos__imagen {
+  width: 20rem;
+  height: 30rem;
+  object-fit: contain;
+}
+.seccionProductos__subtitulos {
+  text-align: center;
+}
+.seccionProductos__imagenDos {
+  width: 20rem;
+  height: 30rem;
+  object-fit: contain;
+}
+.productos__Item {
+  margin: 2rem;
+}
+
+/* MAIN ACCESORIOS */
+.accesorios {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contenedorAccesoriosUno {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+}
+.accesorios__titulos {
+  text-align: center;
+  margin-bottom: 4rem;
+  font-size: 1.5rem;
+}
+.accesorios__imagenes {
+  text-align: center;
+  width: 20rem;
+  height: 20rem;
+  object-fit: contain;
+}
+
+/* MAIN SOBRE-NOSOTROS */
+
+.seccionSobreNos {
+  display: flex;
+  flex-direction: column;
+}
+.historia {
+  display: flex;
+  flex-direction: row;
+}
+.historia img {
+  width: 50%;
+  height: 90vh;
+  object-fit: cover;
+}
+.historiaFundacion {
+  width: 50%;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.historiaFundacion h2 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 3rem;
+}
+.historiaFundacion p {
+  font-size: 1.5rem;
+  text-align: center;
+}
+.objetivos {
+  display: flex;
+  flex-direction: row;
+}
+.contenedorTituloParrafo {
+  width: 50%;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.contenedorTituloParrafo h2 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 3rem;
+}
+.contenedorTituloParrafo p {
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 1rem;
+}
+.objetivos img {
+  width: 50%;
+  height: 110vh;
+  object-fit: cover;
+}
+.tres {
+  display: flex;
+  flex-direction: row;
+}
+.tres img {
+  width: 50%;
+  height: 90vh;
+  object-fit: cover;
+}
+.tresTituloParrafo {
+  width: 50%;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.tresTituloParrafo h2 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 3rem;
+}
+.tresTituloParrafo p {
+  font-size: 1.5rem;
+  text-align: center;
+}
+/* MAIN CONTACTO */
+
+.div__image {
+  width: 100%;
+  height: 90vh;
+  object-fit: cover;
+}
+.section__iframe {
+  width: 80rem;
+  height: 70vh;
+}
+.contendorIframeForm {
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid black;
+  transform: translate(-15rem, -10rem);
+  width: 70%;
+  margin-left: auto;
+  height: fit-content;
+}
+.sectionform__form {
+  width: 40rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(204, 204, 204);
+}
+.sectionFormInput {
+  margin: 1rem;
+}
+.sectionFormInput label {
+  display: none;
+}
+
+/* FOOTER */
+
+footer {
+  background-color: rgb(204, 204, 204);
+  color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: space-between;
+}
+.contenedor-listas {
+  width: 75%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+footer li {
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+.contenedor-iconos a {
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
+footer div a:hover {
+  color: black;
+  transition: all 0.5s;
+}
+
+/* media qery */
+
+@media only screen and (max-width: 450px) {
+  /* HEADER */
+    nav {
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    width: 100%;
+    }
+    nav h1 {
+    margin-left: 1.5rem;
+    }
+    .drawer {
+    display: block;
+    }
+    nav ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    height: 90vh;
+    top: 10vh;
+    text-align: left;
+    position: fixed;
+    transition: all 0.5s;
+    background-color: rgb(177, 177, 177);
+    left: -100%;
+    }
+    nav ul li {
+    border-right: none;
+    }
+    nav ul li a {
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    font-family: "Teko", sans-serif;
+    }
+    #ckbox:checked ~ .listasEstilos {
+    left: 0%;
+    }
+    /* INDEX */
+    .fotoGuitarra {
+    width: 100%;
+    height: 80vh;
+    object-fit: cover;
+    margin-left: none;
+    margin-right: none;
+    }
+    .tituloParrafoPosicion {
+    display: flex;
+    flex-direction: column;
+    }
+    .contenedorFrase h3 {
+    font-size: 1.7rem;
+    }
+    .contenedorFrase p {
+    margin-left: 3rem;
+    font-size: 1.5rem;
+    }
+    /* FOOTER */
+    footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    }
+    footer .contenedor-listas {
+    width: 75%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+    .contenedor-iconos {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    }
+    .contenedor-iconos a {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    }
+}
