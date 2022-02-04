@@ -6,58 +6,89 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos</title>
-    <link rel="stylesheet" href="../css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+
 </head>
 
 <body>
     <header>
-        <nav>
-            <input type="checkbox" id="ckbox">
-            <label for="ckbox" class="drawer">
-                <i class="fa fa-bars" aria-hidden="true"></i>
-            </label>
-            <h1><a href="../index.html">MendezGuitars</a></h1>
-            <ul class="listasEstilos">
-                <li> <a href="productos.html" class="fa fa-product-hunt  "> Productos</a></li>
-                <li> <a href="accesorios.html" class="fa fa-adjust"> Accesorios</a></li>
-                <li> <a href="sobre-nosotros.html" class="fa fa-id-badge "> Sobre nosotros</a></li>
-                <li> <a href="contacto.html" class="fa fa-hashtag "> Contacto</a></li>
-            </ul>
+        <nav class="tipografia navbar navbar-expand-lg navbar-light bg-light border-bottom">
+            <div class="container">
+                <a class="navbar-brand alturaLogo" href="../index.html">MENDEZGUITARS</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav w-100 justify-content-end ">
+                        <li class="nav-item ">
+                            <a class="nav-link active border-end altura" aria-current="page"
+                                href="./sobre-nosotros.html">Sobre
+                                nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active border-end altura" href="./contacto.html">Contacto</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle altura" href="#" id="navbarDropdownMenuLink"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Productos
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item altura" href="./productos.html">Guitarras</a></li>
+                                <li><a class="dropdown-item altura" href="./accesorios.html">Accesorios</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
-    <main class="contenedorMain">
-        <img class="div__image"
-            src="https://www.martinguitar.com/dw/image/v2/BGJT_PRD/on/demandware.static/-/Library-Sites-MartinSharedLibrary/default/dwe31a46c5/images/series/standard/standard-series-hero.jpg?sw=1024&sfrm=jpg"
-            alt="hsdfhsdfhb">
-        <section class="contendorIframeForm">
-            <iframe class="section__iframe"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.01688788953!2d-58.38375908519529!3d-34.60373446500512!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4aa9f0a6da5edb%3A0x11bead4e234e558b!2sObelisco!5e0!3m2!1ses-419!2sar!4v1640294052491!5m2!1ses-419!2sar"
-                style="border:0;" allowfullscreen="" loading="lazy">
-            </iframe>
-            <form class="sectionform__form">
-                <div class="sectionFormInput">
-                    <label for="Nombre">Nombre: </label>
-                    <input type="text" id="Nombre">
+    <main>
+        <section class="container" id="portada">
+            <div class="row contenedorColor">
+                <div class="col-12 col-lg-12 h-100">
+                    <img class="imagenesNosotros w-100 mt-1 mt-lg-5" src="../images/imagen-contacto.jpg"
+                        alt="guitarra de inicio">
                 </div>
-                <div class="sectionFormInput">
-                    <label for="correoElectronico">Mail: </label>
-                    <input type="email" id="correoElectronico">
+            </div>
+        </section>
+        <section class="container my-5 shadow-lg p-4">
+            <div class="row">
+                <div class="col-12 col-lg-6">
+                    <h2 class="fw-bold display-4 text-center text-lg-start">Comunicate con nosotros</h2>
+                    <form action="" class="w-100 row mt-5">
+                        <div class="col-12 col-lg-4 my-3">
+                            <input type="text" id="" name="nombre-usurio" placeholder="Nombre Apellido"
+                                class="form-control form-control-lg">
+                        </div>
+                        <div class="col-12 col-lg-4 my-3">
+                            <input type="text" id="" name="email-usuario" placeholder="Correo"
+                                class="form-control form-control-lg">
+                        </div>
+                        <div class="col-12 col-lg-4 my-3 d-flex justify-content-center  justify-content-lg-start">
+                            <button class=" btn btn-lg c-fondo cLetra">Enviar</button>
+                        </div>
+                    </form>
                 </div>
-                <div class="sectionFormInput">
-                    <textarea placeholder="Mensaje"></textarea>
+                <div class="col-lg-6 order-first order-lg-first">
+                    <iframe class="iframe w-100"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.01688788953!2d-58.38375908519529!3d-34.60373446500512!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4aa9f0a6da5edb%3A0x11bead4e234e558b!2sObelisco!5e0!3m2!1ses-419!2sar!4v1640294052491!5m2!1ses-419!2sar"
+                        style="border:0;" allowfullscreen="" loading="lazy">
+                    </iframe>
                 </div>
-                <div class="sectionFormInput">
-                    <input type="button" value="Enviar">
-                </div>
-            </form>
+            </div>
         </section>
     </main>
-    <footer class="contenedorFooter">
+    <footer>
         <ul class="contenedor-listas">
             <li>
                 <i class="fa fa-envelope" aria-hidden="true"></i>
@@ -73,17 +104,23 @@
             </li>
         </ul>
         <div class="contenedor-iconos">
-            <a class="logo" href="#" >
-                <i class="fa fa-instagram fa-2x" aria-hidden="true"></i>
+            <a class="logo" href="#">
+                <i class="fa fa-instagram fa-3x" aria-hidden="true"></i>
             </a>
             <a class="logo" href="#">
-                <i class="fa fa-facebook fa-2x" aria-hidden="true"></i>
+                <i class="fa fa-facebook fa-3x" aria-hidden="true"></i>
             </a>
             <a class="logo" href="#">
-                <i class="fa fa-youtube-play fa-2x" aria-hidden="true"></i>
+                <i class="fa fa-youtube-play fa-3x" aria-hidden="true"></i>
             </a>
-            </div>
+        </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
