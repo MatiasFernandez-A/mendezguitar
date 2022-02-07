@@ -1,10 +1,9 @@
 *{
     text-decoration: none;
     list-style: none;
-    font-size: 10px;
 }
 body{
-    
+  font-size: 10px;
 }
 /* --------------- HEADER */
 .tipografia{
@@ -12,10 +11,10 @@ body{
 }
 .alturaLogo{
     font-size: 3rem;
-    letter-spacing: .1rem;
+    letter-spacing: .3rem;
 }
 .altura{
-    font-size: 1.8rem;
+    font-size: 1rem;
 }
 
 /* --------------- MAIN INDEX */
@@ -89,7 +88,7 @@ footer {
     align-items: center;
   }
   .contenedor-iconos{
-        display: flex;
+    display: flex;
     flex-direction: row;
     align-items: center;
   }
