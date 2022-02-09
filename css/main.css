@@ -1,0 +1,83 @@
+* {
+  text-decoration: none;
+  list-style: none; }
+
+body {
+  font-size: 10px; }
+
+.tipografia {
+  font-family: 'Teko', sans-serif; }
+
+.alturaLogo {
+  font-size: 3rem;
+  letter-spacing: .3rem; }
+
+.altura {
+  font-size: 1rem; }
+
+.c-fondo {
+  background-color: #245a5c; }
+
+.c-letra {
+  color: black; }
+
+.cLetra {
+  color: white; }
+
+.carousel {
+  background-color: black; }
+
+.imagenesNosotros {
+  height: 90vh;
+  width: 50vw;
+  object-fit: cover; }
+
+.iframe {
+  height: 40vh; }
+
+footer {
+  background-color: black;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly; }
+
+.contenedor-listas {
+  width: 75%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 0; }
+
+footer li {
+  font-family: 'Teko', sans-serif;
+  letter-spacing: .1rem;
+  padding: 1rem;
+  font-size: 1rem;
+  color: white; }
+
+.contenedor-iconos {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; }
+
+.contenedor-iconos a {
+  color: white;
+  margin: .6rem; }
+
+footer div a:hover {
+  color: rgba(61, 61, 61, 0.844);
+  transition: all 0.5s; }
+
+@media only screen and (min-width: 992px) {
+  .contenedor-listas {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center; }
+  .contenedor-iconos {
+    display: flex;
+    flex-direction: row;
+    align-items: center; } }
