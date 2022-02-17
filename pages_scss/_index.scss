@@ -1,12 +1,12 @@
 .c-fondo{
-    background-color: $colorPrincipal ;
+    background-color: map-get($colores, primerColor);
   }
   .c-letra{
-    color: $colorSecundario;
+    color: map-get($colores, segundoColor);
   }
   .cLetra{
-    color: $colorTerciario;
+    color: map-get($colores, tercerColor);
   }
   .carousel{
-    background-color: $colorSecundario;
+    background-color: map-get($colores, segundoColor);
   }

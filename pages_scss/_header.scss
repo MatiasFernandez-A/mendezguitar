@@ -7,5 +7,5 @@
     letter-spacing: .3rem;
 }
 .altura{
-    font-size: 1rem;
+    @include alturaLetra (1rem);
 }

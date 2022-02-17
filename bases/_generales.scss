@@ -5,3 +5,18 @@
 body{
   font-size: 10px;
 }
+/* ------------- mapa */
+$colores:(
+  primerColor:#245a5c,
+  segundoColor:rgb(0, 0, 0),
+  tercerColor:rgb(255, 255, 255),
+);
+/* ------------- extend */
+%flex{
+  display: flex;
+  flex-direction: column;
+}
+/* ---------- mixin */
+@mixin alturaLetra ($fontsize){
+  font-size: $fontsize;
+}

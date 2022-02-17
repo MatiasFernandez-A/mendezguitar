@@ -1,36 +1,35 @@
 footer {
-    background-color: $colorSecundario;
-    color: $colorSecundario;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    .contenedor-listas {
-      width: 75%;
-      margin: auto;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding-left: 0;
-      li {
-        font-family: 'Teko', sans-serif;
-        letter-spacing: .1rem;
-        padding: 1rem;
-        font-size: 1rem;
-        color: $colorTerciario;
-      }
-    }
-    .contenedor-iconos {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      a{
-        color: $colorTerciario;
-        margin: .6rem;
-          &:hover {
-            color: rgba(61, 61, 61, 0.844);
-            transition: all 0.5s;
-            }
-          }   
-        }
+  background-color: map-get($colores, segundoColor);
+  color: map-get($colores, segundoColor);
+  @extend %flex;
+  justify-content: space-evenly;
 }
+.contenedor-listas {
+  width: 75%;
+  margin: auto;
+  @extend %flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 0;
+}
+  .contenedor-listas li {
+  font-family: 'Teko', sans-serif;
+  letter-spacing: .1rem;
+  padding: 1rem;
+  @include alturaLetra (1rem);
+  color: map-get($colores, tercerColor);
+}
+.contenedor-iconos {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  a{
+    color: map-get($colores, tercerColor);
+    margin: .6rem;
+    &:hover {
+      color: rgba(61, 61, 61, 0.844);
+      transition: all 0.5s;
+    }
+  }   
+}
+

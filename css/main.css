@@ -5,6 +5,13 @@
 body {
   font-size: 10px; }
 
+/* ------------- mapa */
+/* ------------- extend */
+footer, .contenedor-listas {
+  display: flex;
+  flex-direction: column; }
+
+/* ---------- mixin */
 .tipografia {
   font-family: 'Teko', sans-serif; }
 
@@ -38,33 +45,32 @@ body {
 footer {
   background-color: black;
   color: black;
-  display: flex;
-  flex-direction: column;
   justify-content: space-evenly; }
-  footer .contenedor-listas {
-    width: 75%;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-left: 0; }
-    footer .contenedor-listas li {
-      font-family: 'Teko', sans-serif;
-      letter-spacing: .1rem;
-      padding: 1rem;
-      font-size: 1rem;
-      color: white; }
-  footer .contenedor-iconos {
-    display: flex;
-    flex-direction: row;
-    justify-content: center; }
-    footer .contenedor-iconos a {
-      color: white;
-      margin: .6rem; }
-      footer .contenedor-iconos a:hover {
-        color: rgba(61, 61, 61, 0.844);
-        transition: all 0.5s; }
+
+.contenedor-listas {
+  width: 75%;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  padding-left: 0; }
+
+.contenedor-listas li {
+  font-family: 'Teko', sans-serif;
+  letter-spacing: .1rem;
+  padding: 1rem;
+  font-size: 1rem;
+  color: white; }
+
+.contenedor-iconos {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; }
+  .contenedor-iconos a {
+    color: white;
+    margin: .6rem; }
+    .contenedor-iconos a:hover {
+      color: rgba(61, 61, 61, 0.844);
+      transition: all 0.5s; }
 
 @media only screen and (min-width: 992px) {
   .contenedor-listas {
