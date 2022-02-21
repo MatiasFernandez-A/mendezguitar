@@ -1,7 +1,7 @@
 {
   "name": "mendezguitars",
   "version": "1.0.0",
-  "description": "",
+  "description": "mendezguitars es una empresa que se especializa en la elaboracion de guitarras",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
