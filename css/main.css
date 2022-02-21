@@ -72,6 +72,12 @@ footer {
       color: rgba(61, 61, 61, 0.844);
       transition: all 0.5s; }
 
+.alturaFoto {
+  width: 15rem;
+  height: 40rem;
+  object-fit: contain;
+  margin: auto; }
+
 @media only screen and (min-width: 992px) {
   .contenedor-listas {
     display: flex;
