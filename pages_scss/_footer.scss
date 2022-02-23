@@ -18,6 +18,7 @@ footer {
   padding: 1rem;
   @include alturaLetra (1rem);
   color: map-get($colores, tercerColor);
+  font-size: 1.3rem;
 }
 .contenedor-iconos {
   display: flex;
@@ -32,4 +33,5 @@ footer {
     }
   }   
 }
+
 
