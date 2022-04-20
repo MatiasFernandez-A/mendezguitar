@@ -48,3 +48,7 @@ let cantidad = () => {
 }
 
 cantidad();
+
+let queBuscas = document.querySelector("#buscador").ariaValueMax; 
+
+console.log(queBuscas);             
