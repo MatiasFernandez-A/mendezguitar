@@ -18,8 +18,8 @@ let aniadirCarrito = [] ;
 /* funcio inventario: Pide valores para varibles guitarra y precio. Las guarda por parametro en la clase Productos creando un nuevo producto */
 
 function inventario() {
-    let guitarra = prompt("Que guitarra queres?");   
-    let precio = parseInt(prompt("Ingrese precio de la guitarra. El precio se muestra en la tabla de precios"));   
+    let guitarra = document.getElementById("guitarraModelo");   
+    let precio = parseInt(document.getElementById("precioGuitarra"));   
     let nuevoProd = new Productos(guitarra,precio); 
     nuevoProd.sumarIva();
     nuevoProd.vender();
@@ -48,7 +48,3 @@ let cantidad = () => {
 }
 
 cantidad();
-
-let queBuscas = document.querySelector("#buscador").ariaValueMax; 
-
-console.log(queBuscas);             
