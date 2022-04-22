@@ -14,37 +14,34 @@ class Productos {
 }
 
 let aniadirCarrito = [] ;
-
+let nuevoProd = 0; 
 /* funcio inventario: Pide valores para varibles guitarra y precio. Las guarda por parametro en la clase Productos creando un nuevo producto */
-
-function inventario() {
-    let guitarra = document.getElementById("guitarraModelo");   
-    let precio = parseInt(document.getElementById("precioGuitarra"));   
-    let nuevoProd = new Productos(guitarra,precio); 
+function inventario(){
+    let guitarra = document.getElementById("guitarraModelo").value;
+    let precio = document.getElementById("precioGuitarra").value;
+    nuevoProd = new Productos(guitarra,precio);
     nuevoProd.sumarIva();
-    nuevoProd.vender();
-    let carrito = confirm("Queres añadirlo al carrito ?");
-    if (carrito == true){
-        aniadirCarrito.push(nuevoProd);
-        console.log(aniadirCarrito);
-    }
-    
-    console.log(nuevoProd);
+    nuevoProd.vender()
 }
-
 
 inventario();
 
-/* Queres saber si la guitarra que elegiste esta en el carrito? */
+const boton = document.querySelector("#btn");
 
-let cantidadCarrito = confirm("Queres saber cuantos productos tenes en el carrito?")
+boton.addEventListener("click", (e) => {
+    e.preventDefault();
+    aniadirCarrito.push(nuevoProd);
+    console.log(aniadirCarrito);
+});
 
-let cantidad = () => {
-    if (cantidadCarrito == true) {
-        console.log( aniadirCarrito.length );
-    } else {
-        console.log ("No se muestra")
-    }
-}
 
-cantidad();
+
+
+
+
+
+
+
+
+
+
