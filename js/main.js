@@ -1,40 +1,44 @@
-/* Clase Productos: Ademas de crear el objeto, le suma el iva y muestra que ya esta vendido */
+
+/* Clase Productos: Crea el objeto  nuevo objeto */
 class Productos {
     constructor(guitarra, precio) {
         this.guitarra = guitarra;
-        this.precio = parseFloat(precio);
-        this.vendido = false;
-    }
-    sumarIva (){
-        this.precio = this.precio * 1.21;
-    }
-    vender (){
-        this.vendido = true;
+        this.precio = parseInt(precio);
     }
 }
 
 
 let aniadirCarrito = [] ;
-let nuevoProd = 0; 
+let btnGuardar = document.getElementById("btn");
 
 /* funcio inventario: Pide valores para varibles guitarra y precio. Las guarda por parametro en la clase Productos creando un nuevo producto */
 
 function inventario(){
     let guitarra = document.getElementById("guitarraModelo").value;
     let precio = document.getElementById("precioGuitarra").value;
-    nuevoProd = new Productos(guitarra,precio);
-    nuevoProd.sumarIva();
-    nuevoProd.vender()
+    const nuevoProd = new Productos(guitarra,precio);
+
+    console.log(nuevoProd);
+
+    let listaNueva = [];
+    if (localStorage.getItem("Productos de guitarras") != null) {
+        listaNueva = JSON.parse(localStorage.getItem("Productos de guitarra"));
+        listaNueva.push(nuevoProd);
+        localStorage.setItem("Productos de guitarra", JSON.stringify(listaNueva));
+    } else {
+        aniadirCarrito.push(nuevoProd);
+        localStorage.setItem("Productos de guitarra", JSON.stringify(aniadirCarrito));
+
+    }
+    return nuevoProd
 }
-inventario();
 
-const boton = document.querySelector("#btn");
-
-boton.addEventListener("click", (e) => {
+btnGuardar.addEventListener("click", (e) =>{
     e.preventDefault();
-    aniadirCarrito.push(nuevoProd);
-    console.log(aniadirCarrito);
-});
+    inventario();
+})  
+
+
 
 
 
