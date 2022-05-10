@@ -11,14 +11,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/main.css">
     <meta name="keywords"
-    content="guitarras, guitarras acusticas, guitarras en CABA, guitarra guitarra1, guitarra guitarra2, guitarra guitarra3, guitarra guitarra4, guitarra guitarra5, guitarra guitarra6, guitarra guitarra7, guitarra guitarra8, puas, cables, apoyaguitarras, afinadores, correas">
+        content="guitarras, guitarras acusticas, guitarras en CABA, guitarra guitarra1, guitarra guitarra2, guitarra guitarra3, guitarra guitarra4, guitarra guitarra5, guitarra guitarra6, guitarra guitarra7, guitarra guitarra8, puas, cables, apoyaguitarras, afinadores, correas">
     <meta name="description"
-    content="En esta página vas a poder encontrar más de 60 modelos de guitarras acústicas y comprar.">
+        content="En esta página vas a poder encontrar más de 60 modelos de guitarras acústicas y comprar.">
     <link rel="icon" type="image/svg" href="../images/favicon/guitar-solid.svg">
     <title>Guitarras | MendezGuitars</title>
+
+
+    <script src="https://kit.fontawesome.com/df59baf6b8.js" crossorigin="anonymous"></script>
+
+
+
 
 </head>
 
@@ -60,7 +66,8 @@
                         </button>
                         <a href="./carrito.html">
                             <button class="btn btn-outline-success mx-1" type="button">
-                                <i class="fa fa-shopping-cart" aria-hidden="true"></i>                        
+                                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                <span id="contadorCarrito">0</span>
                             </button>
                         </a>
                     </form>
@@ -68,7 +75,42 @@
             </div>
         </nav>
     </header>
-    <main>
+    <div class="modal-contenedor">
+        <div class="modal-carrito">
+            <h3>Carrito</h3>
+            <button id="carritoCerrar"><i class="fas fa-times-circle"></i></button>
+            <div id="carrito-contenedor">
+            </div>
+            <p class="precioProducto">Precio total: $<span id="precioTotal">0</span></p>
+            <button id="vaciar-carrito" class="boton-agregar">Vaciar carrito</button>
+        </div>
+    </div>
+    <main id="contenedor-productos">
+
+
+    </main>
+<!--     <section class="container d-none d-lg-block">
+        <div class="container mt-5">
+            <div class="row ">
+                <div class="col-12 c-fondo my-4">
+                    <h1 class="fw-bold display-4 text-center mt-1 cLetra">Acústicas</h1>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex w-100 justify-content-lg-center">
+            <div class="card shadow-lg m-2" style="width: 18rem;">
+                <img src="../images/dos.jpg" class="card-img-top" alt="modelo de guitarra guitarra1 ">
+                <div class="d-flex flex-column justify-content-center align-items-center ">
+                    <h2 class="card-title mt-3">guitarra1</h2>
+                    <h2 class="card-title mt-3">$150.000</h2>
+                    <button class="btn btn-lg c-fondo cLetra my-2 comprar" id="1">
+                        Comprar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section> -->
+<!--     <main>
         <section class="container d-none d-lg-block">
             <div class="container mt-5">
                 <div class="row ">
@@ -240,7 +282,8 @@
                 </div>
             </div>
         </section>
-    </main>
+    </main> -->
+
     <footer>
         <ul class="contenedor-listas">
             <li>
@@ -267,7 +310,10 @@
                 <i class="fa fa-youtube-play fa-3x" aria-hidden="true"></i>
             </a>
         </div>
-    </footer>
+    </footer> }
+    <script src="../js/productos.js"></script>
+    <script src="../js/maintres.js"></script>
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
@@ -278,7 +324,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
         integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
         crossorigin="anonymous"></script>
-        <!--<script src="../js/maindos.js"></script>-->
+
 </body>
 
 </html>
