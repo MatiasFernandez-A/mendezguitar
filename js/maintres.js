@@ -86,18 +86,18 @@ const agregarAlCarrito = (prodId) => {
         carrito.push(item)
     }
     Toastify({
-        text: "This is a toast",
-        duration: 3000,
+        text: "se agrego al carrito",
+        duration: 7000,
         destination: "https://matiasfernandez-a.github.io/mendezguitar/pages/carrito.html",
         newWindow: true,
         close: true,
-        gravity: "top"
-        position: "left"
-        stopOnFocus: true
+        gravity: "top",
+        position: "left",
+        stopOnFocus: true,
         style: {
           background: "linear-gradient(to right, #00b09b, #96c93d)",
         },
-        onClick: function(){}
+        onClick: function(){} 
       }).showToast();
     actualizarCarrito()
 }
