@@ -21,7 +21,23 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 botonVaciar.addEventListener ('click', () =>{
-    carrito.length = 0;
+    carrito.length = 0; 
+    swal({
+        title: "Are you sure?",
+        text: "Once deleted, you will not be able to recover this imaginary file!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+          swal("Poof! Your imaginary file has been deleted!", {
+            icon: "success",
+          });
+        } else {
+          swal("Your imaginary file is safe!");
+        }
+      });
     actualizarCarrito();
 })
 
@@ -36,7 +52,7 @@ stockProductos.forEach((producto) => {
     <section class="container row d-none d-lg-block">
         <div class="d-flex w-100 justify-content-lg-center">
             <div class="card shadow-lg m-2" style="width: 18rem;">
-                <img src="../images/dos.jpg" class="card-img-top" alt="modelo de guitarra guitarra1 ">
+                <img src=${producto.img} class="card-img-top" alt="modelo de guitarra guitarra1 ">
                 <div class="d-flex flex-column justify-content-center align-items-center ">
                     <h2 class="card-title mt-3">${producto.modelo}</h2>
                     <h2 class="card-title mt-3">$ ${producto.precio}</h2>
@@ -69,6 +85,7 @@ const agregarAlCarrito = (prodId) => {
         const item = stockProductos.find((prod) => prod.id === prodId)
         carrito.push(item)
     }
+    alert("Se agrego un nuevo prodjbgkjdfgkj")
     actualizarCarrito()
 }
 /* 
