@@ -23,19 +23,19 @@ document.addEventListener('DOMContentLoaded', () => {
 botonVaciar.addEventListener ('click', () =>{
     carrito.length = 0; 
     swal({
-        title: "Are you sure?",
-        text: "Once deleted, you will not be able to recover this imaginary file!",
+        title: "¿Esta seguro de que quiere vaciar el carrito?",
+        text: "de OK para borrar O CANCEL. para cancelar esta accion ",
         icon: "warning",
         buttons: true,
         dangerMode: true,
       })
       .then((willDelete) => {
         if (willDelete) {
-          swal("Poof! Your imaginary file has been deleted!", {
+          swal("Poof! nuestras posibles ventas se fueron... :(", {
             icon: "success",
           });
         } else {
-          swal("Your imaginary file is safe!");
+          swal("Gracias por dejar las cosas en el carrito!!!");
         }
       });
     actualizarCarrito();
@@ -85,7 +85,20 @@ const agregarAlCarrito = (prodId) => {
         const item = stockProductos.find((prod) => prod.id === prodId)
         carrito.push(item)
     }
-    alert("Se agrego un nuevo prodjbgkjdfgkj")
+    Toastify({
+        text: "This is a toast",
+        duration: 3000,
+        destination: "https://matiasfernandez-a.github.io/mendezguitar/pages/carrito.html",
+        newWindow: true,
+        close: true,
+        gravity: "top"
+        position: "left"
+        stopOnFocus: true
+        style: {
+          background: "linear-gradient(to right, #00b09b, #96c93d)",
+        },
+        onClick: function(){}
+      }).showToast();
     actualizarCarrito()
 }
 /* 
