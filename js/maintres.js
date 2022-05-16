@@ -14,31 +14,32 @@ let carrito = [];
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    if (localStorage.getItem('carrito')){
+    if (localStorage.getItem('carrito')) {
         carrito = JSON.parse(localStorage.getItem('carrito'))
         actualizarCarrito()
     }
 })
 
-botonVaciar.addEventListener ('click', () =>{
-    carrito.length = 0; 
+botonVaciar.addEventListener('click', () => {
     swal({
         title: "¿Esta seguro de que quiere vaciar el carrito?",
-        text: "de OK para borrar O CANCEL. para cancelar esta accion ",
         icon: "warning",
         buttons: true,
         dangerMode: true,
-      })
-      .then((willDelete) => {
-        if (willDelete) {
-          swal("Poof! nuestras posibles ventas se fueron... :(", {
-            icon: "success",
-          });
-        } else {
-          swal("Gracias por dejar las cosas en el carrito!!!");
-        }
-      });
-    actualizarCarrito();
+    })
+        .then((willDelete) => {
+            if (willDelete) {
+                swal("Carrito vacio", {
+                    icon: "success",
+                });
+                carrito.length = 0;
+                actualizarCarrito();
+            } else {
+                swal("Gracias por dejar las cosas en el carrito!!!");
+            }
+        });
+    
+
 })
 
 
@@ -46,7 +47,7 @@ botonVaciar.addEventListener ('click', () =>{
 /* Recorro cada producto del array y por cada uno le agrego una clase. Le agrego un id al boton, que despues lo guardo con el DOM y despues le agrego un addEventListener que va a ejecutar una funcion */
 
 stockProductos.forEach((producto) => {
-    const div = document.createElement ('div'); 
+    const div = document.createElement('div');
     div.classList.add('producto')
     div.innerHTML = `
     <section class="container row d-none d-lg-block">
@@ -62,7 +63,7 @@ stockProductos.forEach((producto) => {
         </div>
     </section>
     `
-    contenedorProductos.appendChild(div); 
+    contenedorProductos.appendChild(div);
     const boton = document.getElementById(`agregar${producto.id}`); //string template
     boton.addEventListener("click", () => {
         agregarAlCarrito(producto.id)
@@ -74,14 +75,14 @@ stockProductos.forEach((producto) => {
 
 
 const agregarAlCarrito = (prodId) => {
-    const existe = carrito.some (prod => prod.id === prodId) //comprobar si el elemento ya existe en el carro
-    if (existe){ 
-        const prod = carrito.map (prod => { 
-            if (prod.id === prodId){
+    const existe = carrito.some(prod => prod.id === prodId) //comprobar si el elemento ya existe en el carro
+    if (existe) {
+        const prod = carrito.map(prod => {
+            if (prod.id === prodId) {
                 prod.cantidad++
             }
         })
-    } else { 
+    } else {
         const item = stockProductos.find((prod) => prod.id === prodId)
         carrito.push(item)
     }
@@ -95,10 +96,10 @@ const agregarAlCarrito = (prodId) => {
         position: "left",
         stopOnFocus: true,
         style: {
-          background: "linear-gradient(to right, #00b09b, #96c93d)",
+            background: "linear-gradient(to right, #00b09b, #96c93d)",
         },
-        onClick: function(){} 
-      }).showToast();
+        onClick: function () { }
+    }).showToast();
     actualizarCarrito()
 }
 /* 
@@ -108,9 +109,9 @@ const agregarAlCarrito = (prodId) => {
 4 - Hace un splice con ese indice 
 */
 
-const eliminarDelCarrito = (prodId) =>{
+const eliminarDelCarrito = (prodId) => {
     const item = carrito.find((prod) => prod.id === prodId);
-    const indice = carrito.indexOf(item); 
+    const indice = carrito.indexOf(item);
     carrito.splice(indice, 1);
     actualizarCarrito();
 }
@@ -119,7 +120,7 @@ const eliminarDelCarrito = (prodId) =>{
 
 const actualizarCarrito = () => {
 
-    contenedorCarrito.innerHTML= "";
+    contenedorCarrito.innerHTML = "";
 
     carrito.forEach((prod) => {
         const div = document.createElement('div');
