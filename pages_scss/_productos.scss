@@ -1,0 +1,13 @@
+.contenedorProds {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 90%;
+    margin: auto;
+}
+.containderPrecioModelo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

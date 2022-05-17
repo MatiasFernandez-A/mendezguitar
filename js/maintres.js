@@ -38,7 +38,7 @@ botonVaciar.addEventListener('click', () => {
                 swal("Gracias por dejar las cosas en el carrito!!!");
             }
         });
-    
+
 
 })
 
@@ -50,18 +50,12 @@ stockProductos.forEach((producto) => {
     const div = document.createElement('div');
     div.classList.add('producto')
     div.innerHTML = `
-    <section class="container row d-none d-lg-block">
-        <div class="d-flex w-100 justify-content-lg-center">
-            <div class="card shadow-lg m-2" style="width: 18rem;">
-                <img src=${producto.img} class="card-img-top" alt="modelo de guitarra guitarra1 ">
-                <div class="d-flex flex-column justify-content-center align-items-center ">
-                    <h2 class="card-title mt-3">${producto.modelo}</h2>
-                    <h2 class="card-title mt-3">$ ${producto.precio}</h2>
-                    <button id="agregar${producto.id}">Agregar al carrito</button>
-                </div>
-            </div>
-        </div>
-    </section>
+    <img src=${producto.img} alt="modelo de ${producto.modelo}">
+    <div class="containderPrecioModelo">
+        <h2>${producto.modelo}</h2>
+        <h2>$ ${producto.precio}</h2>
+        <button id="agregar${producto.id}">Agregar al carrito</button>
+    </div>
     `
     contenedorProductos.appendChild(div);
     const boton = document.getElementById(`agregar${producto.id}`); //string template
@@ -87,7 +81,7 @@ const agregarAlCarrito = (prodId) => {
         carrito.push(item)
     }
     Toastify({
-        text: "se agrego al carrito",
+        text: "Se agrego al carrito",
         duration: 7000,
         destination: "https://matiasfernandez-a.github.io/mendezguitar/pages/carrito.html",
         newWindow: true,
@@ -98,7 +92,6 @@ const agregarAlCarrito = (prodId) => {
         style: {
             background: "linear-gradient(to right, #00b09b, #96c93d)",
         },
-        onClick: function () { }
     }).showToast();
     actualizarCarrito()
 }
