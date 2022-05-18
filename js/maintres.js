@@ -54,7 +54,7 @@ stockProductos.forEach((producto) => {
     <div class="containderPrecioModelo">
         <h2>${producto.modelo}</h2>
         <h2>$ ${producto.precio}</h2>
-        <button id="agregar${producto.id}">Agregar al carrito</button>
+        <button id="agregar${producto.id}" class="btn btn-lg c-fondo cLetra text-center w-40">Agregar al carrito</button>
     </div>
     `
     contenedorProductos.appendChild(div);
@@ -119,9 +119,13 @@ const actualizarCarrito = () => {
         const div = document.createElement('div');
         div.className = ('productoEnCarrito');
         div.innerHTML = `
-        <p>${prod.modelo}</p>
-        <p> Precio: ${prod.precio}</p>
-        <button onclick="eliminarDelCarrito(${prod.id})">Eliminar</button>
+        <div class="carritoModelo">
+            <p>${prod.modelo}</p>
+            <p> Precio: ${prod.precio}</p>
+        </div>
+        <div class="botonEliminar" >
+            <button onclick="eliminarDelCarrito(${prod.id})">X</button>
+        </div>
         `
         contenedorCarrito.appendChild(div)
 

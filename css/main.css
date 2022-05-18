@@ -95,7 +95,7 @@ footer {
   flex-wrap: wrap;
   flex-direction: row;
   width: 90%;
-  margin: auto; }
+  margin: 2rem 4rem; }
 
 .containderPrecioModelo {
   display: flex;
@@ -160,3 +160,21 @@ footer {
   display: inline-block;
   font-weight: 300;
   transition: background-color .3s; }
+
+.productoEnCarrito {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+
+.carritoModelo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around; }
+
+.carritoModelo p {
+  margin: .6rem; }
+
+.botonEliminar {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
