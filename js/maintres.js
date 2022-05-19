@@ -1,13 +1,14 @@
 const contenedorProductos = document.getElementById("contenedor-productos");
 
 const contenedorCarrito = document.getElementById("carrito-contenedor");
-// no eliminar
+
 const botonVaciar = document.getElementById("vaciar-carrito");
-// no eliminar
+const boton = document.getElementById("boton");
+
 const contadorCarrito = document.getElementById("contadorCarrito");
 
 const precioTotal = document.getElementById("precioTotal");
-// no eliminar
+
 
 
 let carrito = [];
@@ -46,7 +47,7 @@ botonVaciar.addEventListener('click', () => {
 
 /* Recorro cada producto del array y por cada uno le agrego una clase. Le agrego un id al boton, que despues lo guardo con el DOM y despues le agrego un addEventListener que va a ejecutar una funcion */
 
-stockProductos.forEach((producto) => {
+/* stockProductos.forEach((producto) => {
     const div = document.createElement('div');
     div.classList.add('producto')
     div.innerHTML = `
@@ -63,6 +64,38 @@ stockProductos.forEach((producto) => {
         agregarAlCarrito(producto.id)
     })
 })
+ */
+
+
+
+
+const obtenerDatos = ()=>{
+    fetch("productos.json")
+        .then(response => response.json())
+        .then(result => {
+            let datosProductos = JSON.parse(result);
+            datosProductos.forEach(prod =>{
+                contenedorProductos.innerHTML = `
+                <div class="producto">
+                    <img src=${prod.img} alt="modelo de ${prod.modelo}">
+                    <div class="containderPrecioModelo">
+                        <h2>${prod.modelo}</h2>
+                        <h2>$ ${prod.precio}</h2>
+                        <button id="agregar${prod.id}" class="btn btn-lg c-fondo cLetra text-center w-40">Agregar al carrito</button>
+                    </div>
+                </div>
+                `
+            })
+        })
+        .catch(error => console.log(error))
+}
+
+
+boton.addEventListener("click" ,()=>{
+    obtenerDatos();
+})
+
+
 
 /* Funcion que agrega los productos al carrito que resive por parametro la id del producto  */
 /* Nos va a traer el producto que que tenga la propiedad id que coincida con el producto id que resivo por parametro   */
