@@ -3,7 +3,6 @@ const contenedorProductos = document.getElementById("contenedor-productos");
 const contenedorCarrito = document.getElementById("carrito-contenedor");
 
 const botonVaciar = document.getElementById("vaciar-carrito");
-const boton = document.getElementById("boton");
 
 const contadorCarrito = document.getElementById("contadorCarrito");
 
@@ -59,10 +58,7 @@ botonVaciar.addEventListener('click', () => {
     </div>
     `
     contenedorProductos.appendChild(div);
-    const boton = document.getElementById(`agregar${producto.id}`); //string template
-    boton.addEventListener("click", () => {
-        agregarAlCarrito(producto.id)
-    })
+
 })
  */
 
@@ -70,10 +66,10 @@ botonVaciar.addEventListener('click', () => {
 
 
 const obtenerDatos = ()=>{
-    fetch("productos.json")
+    fetch("../js/productos.json")
         .then(response => response.json())
-        .then(result => {
-            let datosProductos = JSON.parse(result);
+        .then((result) => {
+            let datosProductos = result;
             datosProductos.forEach(prod =>{
                 contenedorProductos.innerHTML = `
                 <div class="producto">
@@ -87,13 +83,14 @@ const obtenerDatos = ()=>{
                 `
             })
         })
-        .catch(error => console.log(error))
+        .catch(error => console.log(error));
+        const boton = document.getElementById(`agregar${prod.id}`); //string template
+        boton.addEventListener("click", () => {
+        agregarAlCarrito(prod.id)
+    })
 }
 
-
-boton.addEventListener("click" ,()=>{
-    obtenerDatos();
-})
+obtenerDatos();
 
 
 
