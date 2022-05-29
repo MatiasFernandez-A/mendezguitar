@@ -4,10 +4,9 @@ const contenedorCarrito = document.getElementById("carrito-contenedor");
 
 const botonVaciar = document.getElementById("vaciar-carrito");
 
-const contadorCarrito = document.getElementById("contadorCarrito");
+const contadorCarrito = document.getElementById("contadorCarrito"); 
 
 const precioTotal = document.getElementById("precioTotal");
-
 
 
 let carrito = [];
@@ -71,7 +70,7 @@ const obtenerDatos = ()=>{
         .then((result) => {
             let datosProductos = result;
             datosProductos.forEach(prod =>{
-                contenedorProductos.innerHTML = `
+                contenedorProductos.innerHTML += `
                 <div class="producto">
                     <img src=${prod.img} alt="modelo de ${prod.modelo}">
                     <div class="containderPrecioModelo">
@@ -81,16 +80,16 @@ const obtenerDatos = ()=>{
                     </div>
                 </div>
                 `
+                const boton = document.getElementById(`agregar${prod.id}`); //string template
+                boton.addEventListener("click", () => {
+                    agregarAlCarrito(prod.id)
+                })
             })
         })
-        .catch(error => console.log(error));
-        const boton = document.getElementById(`agregar${prod.id}`); //string template
-        boton.addEventListener("click", () => {
-        agregarAlCarrito(prod.id)
-    })
+        .catch(error => console.log(error));     
 }
-
 obtenerDatos();
+
 
 
 
