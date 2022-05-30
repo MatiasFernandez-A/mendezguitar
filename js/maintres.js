@@ -63,35 +63,42 @@ botonVaciar.addEventListener('click', () => {
 
 
 
-
-const obtenerDatos = ()=>{
+//Funcion para traer la info del fetch y guardar en sessionStorage
+const obtenerProductos = () => {
     fetch("../js/productos.json")
         .then(response => response.json())
-        .then((result) => {
-            let datosProductos = result;
-            datosProductos.forEach(prod =>{
-                contenedorProductos.innerHTML += `
-                <div class="producto">
-                    <img src=${prod.img} alt="modelo de ${prod.modelo}">
-                    <div class="containderPrecioModelo">
-                        <h2>${prod.modelo}</h2>
-                        <h2>$ ${prod.precio}</h2>
-                        <button id="agregar${prod.id}" class="btn btn-lg c-fondo cLetra text-center w-40">Agregar al carrito</button>
-                    </div>
-                </div>
-                `
-                const boton = document.getElementById(`agregar${prod.id}`); //string template
-                boton.addEventListener("click", () => {
-                    agregarAlCarrito(prod.id)
-                })
-            })
+        .then(json => {
+            sessionStorage.removeItem('productos');
+            sessionStorage.setItem('productos', JSON.stringify(json));
         })
         .catch(error => console.log(error));     
 }
-obtenerDatos();
 
+//Funcion para traer la info del SessionStorage y convertir a json nuevamente y devuelve la info en JSON
+function getAllProducts(){   
+    let allProducts = sessionStorage.getItem('productos');
+    allProducts = JSON.parse(allProducts);
+    return allProducts;
+}
 
-
+//Renderizar cartas trayendo los productos de la funcion anterior
+const cardRender = () =>{
+    const datosProductos = getAllProducts()
+    datosProductos.forEach(prod =>{
+        contenedorProductos.innerHTML += `
+        <div class="producto">
+            <img src=${prod.img} alt="modelo de ${prod.modelo}">
+            <div class="containderPrecioModelo">
+                <h2>${prod.modelo}</h2>
+                <h2>$ ${prod.precio}</h2>
+                <button id="agregar${prod.id}" onclick="agregarAlCarrito(${prod.id})" class="btn btn-lg c-fondo cLetra text-center w-40">Agregar al carrito</button>
+            </div>
+        </div>
+        `
+    })
+}
+obtenerProductos()
+cardRender()
 
 /* Funcion que agrega los productos al carrito que resive por parametro la id del producto  */
 /* Nos va a traer el producto que que tenga la propiedad id que coincida con el producto id que resivo por parametro   */
@@ -99,6 +106,7 @@ obtenerDatos();
 
 const agregarAlCarrito = (prodId) => {
     const existe = carrito.some(prod => prod.id === prodId) //comprobar si el elemento ya existe en el carro
+    const stockProductos = getAllProducts()
     if (existe) {
         const prod = carrito.map(prod => {
             if (prod.id === prodId) {
