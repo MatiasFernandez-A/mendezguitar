@@ -1,3 +1,8 @@
+
+
+/* LA UNICA PESTAÑA QUE TIENE DESARROLLO ES LA DE Productos - Guitarras */
+
+
 const contenedorProductos = document.getElementById("contenedor-productos");
 
 const contenedorCarrito = document.getElementById("carrito-contenedor");
@@ -8,7 +13,6 @@ const contadorCarrito = document.getElementById("contadorCarrito");
 
 const precioTotal = document.getElementById("precioTotal");
 
-
 let carrito = [];
 
 
@@ -18,6 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
         actualizarCarrito()
     }
 })
+
+/* Funcion para vaciar el carrito */
 
 botonVaciar.addEventListener('click', () => {
     swal({
@@ -42,27 +48,6 @@ botonVaciar.addEventListener('click', () => {
 })
 
 
-
-/* Recorro cada producto del array y por cada uno le agrego una clase. Le agrego un id al boton, que despues lo guardo con el DOM y despues le agrego un addEventListener que va a ejecutar una funcion */
-
-/* stockProductos.forEach((producto) => {
-    const div = document.createElement('div');
-    div.classList.add('producto')
-    div.innerHTML = `
-    <img src=${producto.img} alt="modelo de ${producto.modelo}">
-    <div class="containderPrecioModelo">
-        <h2>${producto.modelo}</h2>
-        <h2>$ ${producto.precio}</h2>
-        <button id="agregar${producto.id}" class="btn btn-lg c-fondo cLetra text-center w-40">Agregar al carrito</button>
-    </div>
-    `
-    contenedorProductos.appendChild(div);
-
-})
- */
-
-
-
 //Funcion para traer la info del fetch y guardar en sessionStorage
 const obtenerProductos = () => {
     fetch("../js/productos.json")
@@ -75,15 +60,15 @@ const obtenerProductos = () => {
 }
 
 //Funcion para traer la info del SessionStorage y convertir a json nuevamente y devuelve la info en JSON
-function getAllProducts(){   
-    let allProducts = sessionStorage.getItem('productos');
-    allProducts = JSON.parse(allProducts);
-    return allProducts;
+function totalProductos (){   
+    let totalprod = sessionStorage.getItem('productos');
+    totalprod = JSON.parse(totalprod);
+    return totalprod;
 }
 
 //Renderizar cartas trayendo los productos de la funcion anterior
-const cardRender = () =>{
-    const datosProductos = getAllProducts()
+const renderizadoCartas = () =>{
+    const datosProductos = totalProductos ()
     datosProductos.forEach(prod =>{
         contenedorProductos.innerHTML += `
         <div class="producto">
@@ -98,7 +83,7 @@ const cardRender = () =>{
     })
 }
 obtenerProductos()
-cardRender()
+renderizadoCartas()
 
 /* Funcion que agrega los productos al carrito que resive por parametro la id del producto  */
 /* Nos va a traer el producto que que tenga la propiedad id que coincida con el producto id que resivo por parametro   */
@@ -106,7 +91,7 @@ cardRender()
 
 const agregarAlCarrito = (prodId) => {
     const existe = carrito.some(prod => prod.id === prodId) //comprobar si el elemento ya existe en el carro
-    const stockProductos = getAllProducts()
+    const stockProductos = totalProductos ()
     if (existe) {
         const prod = carrito.map(prod => {
             if (prod.id === prodId) {
@@ -132,11 +117,9 @@ const agregarAlCarrito = (prodId) => {
     }).showToast();
     actualizarCarrito()
 }
+
 /* 
-1 - Funcion eliminar del carrito: recive por parametro el id del producto
-2 - Busca ese mismo ID con find dentro del carrito 
-3 - Con indexOf obtiene su indice
-4 - Hace un splice con ese indice 
+Funcion eliminar del carrito
 */
 
 const eliminarDelCarrito = (prodId) => {
@@ -172,7 +155,6 @@ const actualizarCarrito = () => {
 
     contadorCarrito.innerText = carrito.length;
 
-    /*  */
     precioTotal.innerText = carrito.reduce((acc, prod) => acc + prod.precio, 0);
 
 }
